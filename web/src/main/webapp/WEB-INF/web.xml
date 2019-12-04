@@ -19,6 +19,19 @@
         <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
     </filter>
 
+    <!--<servlet>
+        <servlet-name>test</servlet-name>
+        <servlet-class>print</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>test</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>-->
+    
+
+
+    
+
     <filter-mapping>
         <filter-name>log4j</filter-name>
         <url-pattern>/*</url-pattern>

@@ -14,12 +14,14 @@ import javax.servlet.annotation.WebListener;
  * @date 2019/4/16 11:15
  */
 @WebListener
-public class BootServletRequestListener implements ServletRequestListener {
+public class BootServletRequestListener implements ServletRequestListener  {
 
     private Logger logger = LoggerFactory.getLogger(BootServletRequestListener.class);
 
+
+
     @Override
-    public void requestDestroyed(ServletRequestEvent sre) {
+    public void requestDestroyed(ServletRequestEvent sre)   {
         logger.debug("BootServletRequestListener-->requestDestroyed()");
     }
 

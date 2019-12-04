@@ -1,11 +1,8 @@
 package club.yuit.listener;
 
-import club.yuit.filter.MainFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.FilterRegistration;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -22,7 +19,6 @@ public class BootContextListener  implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-
         logger.info("BootContextListener-->contextInitialized()");
     }
 

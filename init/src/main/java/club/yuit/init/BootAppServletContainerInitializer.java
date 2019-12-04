@@ -23,12 +23,13 @@ public class BootAppServletContainerInitializer implements ServletContainerIniti
 
     @Override
     public void onStartup(Set<Class<?>> cls, ServletContext ctx) throws ServletException {
-
-
             logger.info("BootAppInit-->onStart()");
 
-            List<BootAppInitializer> initializers = new LinkedList<>();
+            if (cls==null ){
+                return;
+            }
 
+            List<BootAppInitializer> initializers = new LinkedList<>();
             for (Class cs:cls){
                 if (!cs.isInterface()&&!Modifier.isAbstract(cs.getModifiers())){
                     try {
@@ -36,13 +37,12 @@ public class BootAppServletContainerInitializer implements ServletContainerIniti
                     }catch (Throwable ex){
                         logger.error(ex.getMessage());
                     }
-
                 }
             }
 
 
             if(initializers.isEmpty()){
-                logger.error("No BootAppInitializer");
+                logger.warn("No BootAppInitializer");
             }
 
 
